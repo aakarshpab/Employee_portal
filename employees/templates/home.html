@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Employee Portal{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Employee Portal</h1>
+    <p></p>
+    
+    <h3>Quick look:</h3>
+    <ul>
+        <li><a href="{% url 'employee_list' %}">Employee List</a></li>
+        <li><a href="{% url 'about' %}">About Portal</a></li>
+    </ul>
+{% endblock %}

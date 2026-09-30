@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Employee List - Employee Portal{% endblock %}
+
+{% block content %}
+    <h2>Employee Directory</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Designation</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          
+            {% for emp in employees %}
+            <tr>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.department }}</td>
+                <td>{{ emp.designation }}</td>
+                <td>
+                   
+                    <a href="{% url 'employee_detail' emp.id %}">View Details</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No employees found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
